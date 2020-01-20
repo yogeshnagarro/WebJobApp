@@ -7,11 +7,15 @@ namespace WebJobApp
     using Hangfire.Storage;
     using Microsoft.AspNetCore.Builder;
     using Microsoft.AspNetCore.Hosting;
+    using Microsoft.AspNetCore.Mvc;
     using Microsoft.AspNetCore.Mvc.ModelBinding.Binders;
     using Microsoft.Extensions.Configuration;
     using Microsoft.Extensions.DependencyInjection;
     using Microsoft.Extensions.Hosting;
+    using WebJobApp.BAL;
+    using WebJobApp.Contracts;
     using WebJobApp.Filters;
+    using EnvironmentName = Microsoft.AspNetCore.Hosting.EnvironmentName;
 
     public class Startup
     {
@@ -59,12 +63,18 @@ namespace WebJobApp
 
             app.UseAuthorization();
 
-            app.UseEndpoints(endpoints => { endpoints.MapRazorPages(); });
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapRazorPages();
+                endpoints.MapControllers();
+            });
         }
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddScoped<IBackgroundJobManager, BackgroundJobManager>();
+
             // Add Hangfire services.
             services.AddHangfire(configuration => configuration
                 .SetDataCompatibilityLevel(CompatibilityLevel.Version_170)
@@ -87,6 +97,7 @@ namespace WebJobApp
             services.AddHangfireServer();
 
             services.AddRazorPages();
+            services.AddControllers();
         }
 
         #endregion

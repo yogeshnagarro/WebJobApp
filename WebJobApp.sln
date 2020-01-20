@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebJobApp.Model", "WebJobAp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebJobApp.Common", "WebJobApp.Common\WebJobApp.Common.csproj", "{93E58D67-7B6C-47CC-AEDE-47E364B31B9C}"
 EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "WebJobApp.Database", "WebJobApp.Database\WebJobApp.Database.sqlproj", "{2B54FA2A-785D-4AF6-84EE-00E8D6866EB9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,12 @@ Global
 		{93E58D67-7B6C-47CC-AEDE-47E364B31B9C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{93E58D67-7B6C-47CC-AEDE-47E364B31B9C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{93E58D67-7B6C-47CC-AEDE-47E364B31B9C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2B54FA2A-785D-4AF6-84EE-00E8D6866EB9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B54FA2A-785D-4AF6-84EE-00E8D6866EB9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B54FA2A-785D-4AF6-84EE-00E8D6866EB9}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{2B54FA2A-785D-4AF6-84EE-00E8D6866EB9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B54FA2A-785D-4AF6-84EE-00E8D6866EB9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2B54FA2A-785D-4AF6-84EE-00E8D6866EB9}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
